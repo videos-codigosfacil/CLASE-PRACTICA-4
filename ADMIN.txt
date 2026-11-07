@@ -1,0 +1,4 @@
+DATOS DEL ADMINISTRADOR – NOVA MARKET
+
+Usuario: admin
+Contraseña: admin123

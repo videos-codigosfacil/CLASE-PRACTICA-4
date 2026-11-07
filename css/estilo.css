@@ -1,0 +1,665 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #5145e5;
+    --primary-dark: #30258f;
+    --purple: #8875ff;
+    --dark: #171b38;
+    --text: #333b59;
+    --muted: #828ba5;
+    --background: #f5f6fc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* HEADER */
+
+.encabezado {
+    width: 100%;
+    padding: 21px 8%;
+    background: rgba(255,255,255,0.96);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 25px rgba(35,35,90,0.05);
+    position: relative;
+    z-index: 5;
+}
+
+.encabezado h1 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+}
+
+.encabezado h1::first-letter {
+    color: var(--primary);
+}
+
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.encabezado a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.encabezado nav a:hover {
+    color: var(--primary);
+}
+
+/* HERO */
+
+.portada {
+    min-height: 540px;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(ellipse at 90% 10%, rgba(166,142,255,.8), transparent 33%),
+        radial-gradient(ellipse at 65% 100%, rgba(44,115,255,.55), transparent 38%),
+        linear-gradient(120deg, #171b48, #4135b9 55%, #6955ed);
+}
+
+.portada::before {
+    content: "";
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 50%;
+    right: -80px;
+    top: 50px;
+    box-shadow:
+        0 0 0 45px rgba(255,255,255,.035),
+        0 0 0 90px rgba(255,255,255,.025);
+}
+
+.portada::after {
+    content: "N";
+    position: absolute;
+    right: 13%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-12deg);
+    font-family: 'Manrope', sans-serif;
+    font-size: 310px;
+    font-weight: 800;
+    color: rgba(255,255,255,.09);
+}
+
+.portada-contenido {
+    max-width: 690px;
+    position: relative;
+    z-index: 2;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 10px 17px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.2);
+    color: #e3deff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.portada h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+    margin: 25px 0 20px;
+}
+
+.portada p {
+    max-width: 550px;
+    color: #e1e2ff;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.boton-portada {
+    display: inline-block;
+    background: white;
+    color: var(--primary-dark);
+    padding: 16px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 10px 30px rgba(0,0,0,.17);
+    transition: .3s;
+}
+
+.boton-portada:hover {
+    transform: translateY(-5px);
+    background: #f0edff;
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 65px 9%;
+}
+
+.beneficios article {
+    background: white;
+    border: 1px solid #ecebfa;
+    border-radius: 20px;
+    padding: 32px 27px;
+    box-shadow: 0 10px 35px rgba(40,35,110,.045);
+    transition: .3s;
+}
+
+.beneficios article:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(81,69,229,.12);
+}
+
+.beneficios h3 {
+    color: var(--dark);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.beneficios p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PRODUCTOS */
+
+.contenedor {
+    width: 86%;
+    max-width: 1280px;
+    margin: 65px auto;
+}
+
+.contenedor h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 37px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.contenedor > p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+    gap: 27px;
+    margin-top: 38px;
+}
+
+.tarjeta {
+    background: white;
+    border: 1px solid #eeeff7;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(30,35,90,.05);
+    transition: transform .35s, box-shadow .35s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-9px);
+    box-shadow: 0 20px 45px rgba(81,69,229,.13);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 235px;
+    display: block;
+    object-fit: cover;
+    background: #ecebff;
+    transition: transform .5s;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.035);
+}
+
+.contenido-tarjeta {
+    padding: 24px;
+}
+
+.contenido-tarjeta h3 {
+    color: var(--dark);
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.contenido-tarjeta p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.contenido-tarjeta .vendedor {
+    color: #9a9fb3;
+    font-size: 12px;
+}
+
+.contenido-tarjeta strong {
+    display: block;
+    color: var(--primary);
+    font-size: 27px;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.boton {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(110deg, #5145e5, #8170ff);
+    border-radius: 11px;
+    padding: 14px;
+    font-weight: 800;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.boton:hover {
+    background: linear-gradient(110deg, #30258f, #5145e5);
+    box-shadow: 0 7px 20px rgba(81,69,229,.25);
+}
+
+/* FOOTER */
+
+.pie {
+    background: #171b38;
+    color: #c8cbe0;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 750px) {
+    .encabezado {
+        padding: 20px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .encabezado nav {
+        gap: 20px;
+    }
+
+    .portada {
+        min-height: 470px;
+        padding: 60px 7%;
+    }
+
+    .portada::after {
+        font-size: 180px;
+        right: 3%;
+    }
+
+    .portada h2 {
+        font-size: 39px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+    }
+
+    .contenedor {
+        width: 90%;
+        margin: 45px auto;
+    }
+
+    .contenedor h2 {
+        font-size: 29px;
+    }
+}
+
+/* =================================
+   PÁGINA DE COMPRA
+================================= */
+
+.compra-contenedor {
+    width: 88%;
+    max-width: 1050px;
+    margin: 55px auto 75px;
+}
+
+.compra-titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.etiqueta-compra {
+    color: #5145e5;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.compra-titulo h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    color: #171b38;
+    margin: 12px 0;
+}
+
+.compra-titulo p {
+    color: #828ba5;
+}
+
+.compra-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(40,35,110,.08);
+}
+
+.producto-resumen {
+    padding: 35px;
+    background: linear-gradient(145deg, #f0edff, #e6ebff);
+}
+
+.producto-resumen img {
+    width: 100%;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.resumen-etiqueta {
+    color: #5145e5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.producto-resumen h3 {
+    color: #171b38;
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.producto-resumen p {
+    color: #68748b;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.producto-resumen strong {
+    color: #5145e5;
+    font-size: 30px;
+}
+
+.formulario-compra {
+    padding: 40px;
+}
+
+.formulario-compra h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 23px;
+    color: #171b38;
+    margin-bottom: 25px;
+}
+
+.formulario-compra label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 17px 0 8px;
+    color: #333b59;
+}
+
+.formulario-compra input,
+.formulario-compra textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e2e4f0;
+    border-radius: 10px;
+    background: #fafaff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: .3s;
+}
+
+.formulario-compra input:focus,
+.formulario-compra textarea:focus {
+    border-color: #5145e5;
+    box-shadow: 0 0 0 3px rgba(81,69,229,.10);
+}
+
+.formulario-compra textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.boton-confirmar {
+    display: block;
+    width: 100%;
+    border: none;
+    background: linear-gradient(110deg, #5145e5, #8875ff);
+    color: white;
+    padding: 16px;
+    border-radius: 11px;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: .3s;
+}
+
+.boton-confirmar:hover {
+    background: #30258f;
+    transform: translateY(-2px);
+}
+
+.mensaje-compra {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.mensaje-compra.exito {
+    background: #e7f8ee;
+    color: #187443;
+}
+
+.mensaje-compra.error {
+    background: #fff0f0;
+    color: #c43e3e;
+}
+
+.compra-finalizada {
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 50px 35px;
+    background: white;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(40,35,110,.08);
+}
+
+.icono-exito {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e7f8ee;
+    color: #187443;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.compra-finalizada h2 {
+    color: #171b38;
+    margin-bottom: 15px;
+}
+
+.compra-finalizada p {
+    color: #828ba5;
+    line-height: 1.7;
+}
+
+@media (max-width: 750px) {
+    .compra-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .compra-contenedor {
+        width: 92%;
+    }
+
+    .formulario-compra,
+    .producto-resumen {
+        padding: 25px;
+    }
+
+    .compra-titulo h2 {
+        font-size: 29px;
+    }
+}
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.estadistica {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #5145e5;
+}
+
+.estadistica h3 {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.estadistica p {
+    font-size: 30px;
+    font-weight: 800;
+    color: #30258f;
+    margin: 0;
+}
+.grafico-contenedor {
+    background: white;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.grafico-contenedor h2 {
+    margin-bottom: 20px;
+}
+
+.grafico {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 320px;
+    margin: auto;
+}
+.titulo-pago {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.opcion-pago {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e2ed;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #fff;
+}
+
+.opcion-pago:hover {
+    border-color: #5145e5;
+    background: #f8f7ff;
+}
+
+.opcion-pago input {
+    accent-color: #5145e5;
+}
+
+.opcion-pago span:nth-child(2) {
+    flex: 1;
+}
+
+.opcion-pago small {
+    display: block;
+    color: #777;
+    margin-top: 4px;
+}
+
+.aviso-pago {
+    background: #f2f0ff;
+    color: #5145e5;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin: 18px 0;
+    line-height: 1.5;
+}
